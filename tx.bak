@@ -1,0 +1,210 @@
+EESchema Schematic File Version 4
+LIBS:violet-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 5 10
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 1850 1750 1300 850 
+U 5D3E176B
+F0 "Generator" 50
+F1 "adf4351.sch" 50
+F2 "SPI_CLK" I L 1850 2200 50 
+F3 "SPI_DATA" I L 1850 2300 50 
+F4 "SPI_LE" I L 1850 2400 50 
+F5 "SPI_CE" I L 1850 2500 50 
+F6 "LD" O R 3150 2500 50 
+F7 "RF_OUTA" O R 3150 1900 50 
+F8 "RF_OUTB" O R 3150 2050 50 
+F9 "REF_IN" I L 1850 2100 50 
+F10 "+3v3A" I L 1850 1800 50 
+F11 "+3v3D" I L 1850 1900 50 
+$EndSheet
+$Sheet
+S 6450 1750 1150 800 
+U 5D3F6B9C
+F0 "Tx Amp" 50
+F1 "tx_amp.sch" 50
+F2 "RF_IN" I L 6450 2000 50 
+F3 "ATT_LE" I L 6450 2500 50 
+F4 "SPI_CLK" I L 6450 2400 50 
+F5 "SPI_DATA" I L 6450 2300 50 
+F6 "RF_OUT" O R 7600 1950 50 
+F7 "DETN" O R 7600 2400 50 
+F8 "+3v3" I L 6450 1850 50 
+$EndSheet
+$Comp
+L Device:C C?
+U 1 1 5D5E5806
+P 3750 2500
+F 0 "C?" H 3865 2546 50  0000 L CNN
+F 1 "1nF" H 3865 2455 50  0000 L CNN
+F 2 "" H 3788 2350 50  0001 C CNN
+F 3 "~" H 3750 2500 50  0001 C CNN
+	1    3750 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5D5E58FD
+P 3800 1700
+F 0 "C?" V 4052 1700 50  0000 C CNN
+F 1 "1nF" V 3961 1700 50  0000 C CNN
+F 2 "" H 3838 1550 50  0001 C CNN
+F 3 "~" H 3800 1700 50  0001 C CNN
+	1    3800 1700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5D5E5A6C
+P 3950 2850
+F 0 "R?" V 3850 2850 50  0000 C CNN
+F 1 "49.9" V 3950 2850 50  0000 C CNN
+F 2 "" V 3880 2850 50  0001 C CNN
+F 3 "~" H 3950 2850 50  0001 C CNN
+	1    3950 2850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4450 1900 4350 1900
+Wire Wire Line
+	4350 1900 4350 1700
+Wire Wire Line
+	4350 1700 3950 1700
+Wire Wire Line
+	3150 1900 3550 1900
+Wire Wire Line
+	3550 1900 3550 1700
+Wire Wire Line
+	3550 1700 3650 1700
+Wire Wire Line
+	3150 2050 3750 2050
+Wire Wire Line
+	3750 2050 3750 2350
+Wire Wire Line
+	3750 2650 3750 2850
+Wire Wire Line
+	3750 2850 3800 2850
+$Comp
+L power:GND #PWR?
+U 1 1 5D5E81DC
+P 4200 2950
+F 0 "#PWR?" H 4200 2700 50  0001 C CNN
+F 1 "GND" H 4205 2777 50  0000 C CNN
+F 2 "" H 4200 2950 50  0001 C CNN
+F 3 "" H 4200 2950 50  0001 C CNN
+	1    4200 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 2850 4200 2850
+Wire Wire Line
+	4200 2850 4200 2950
+$Comp
+L Device:C C?
+U 1 1 5D5FDDAD
+P 5950 2000
+F 0 "C?" V 6202 2000 50  0000 C CNN
+F 1 "1nF" V 6111 2000 50  0000 C CNN
+F 2 "" H 5988 1850 50  0001 C CNN
+F 3 "~" H 5950 2000 50  0001 C CNN
+	1    5950 2000
+	0    -1   -1   0   
+$EndComp
+$Sheet
+S 4450 1750 1100 850 
+U 5D3E17FE
+F0 "Filter Bank" 50
+F1 "filterbank.sch" 50
+F2 "RF_IN" I L 4450 1900 50 
+F3 "RF_OUT" I R 5550 1900 50 
+F4 "V1" I L 4450 2250 50 
+F5 "V2" I L 4450 2350 50 
+F6 "V3" I L 4450 2450 50 
+F7 "V4" I L 4450 2550 50 
+$EndSheet
+Text Label 4200 2250 0    50   ~ 0
+FB_1
+Text Label 4200 2350 0    50   ~ 0
+FB_2
+Text Label 4200 2450 0    50   ~ 0
+FB_3
+NoConn ~ 4350 2550
+Wire Wire Line
+	4350 2550 4450 2550
+Wire Wire Line
+	4200 2450 4450 2450
+Wire Wire Line
+	4200 2350 4450 2350
+Wire Wire Line
+	4200 2250 4450 2250
+Wire Wire Line
+	5550 1900 5750 1900
+Wire Wire Line
+	5750 1900 5750 2000
+Wire Wire Line
+	5750 2000 5800 2000
+Wire Wire Line
+	6100 2000 6450 2000
+Text Label 6050 2400 0    50   ~ 0
+SPI_CLK
+Text Label 6050 2500 0    50   ~ 0
+ATT_LE
+Text Label 1450 2200 0    50   ~ 0
+SPI_CLK
+Wire Wire Line
+	1450 2200 1850 2200
+Wire Wire Line
+	1450 2300 1850 2300
+Text Label 1450 2400 0    50   ~ 0
+GEN_LE
+Wire Wire Line
+	1450 2400 1850 2400
+Text Label 1450 2100 0    50   ~ 0
+REF_CLK
+Text Label 1450 2500 0    50   ~ 0
+GEN_CE
+Wire Wire Line
+	1450 2500 1850 2500
+Wire Wire Line
+	6050 2300 6450 2300
+Wire Wire Line
+	6050 2400 6450 2400
+Wire Wire Line
+	6050 2500 6450 2500
+Text Label 1450 2300 0    50   ~ 0
+GEN_DATA
+Text Label 6050 2300 0    50   ~ 0
+ATT_DATA
+Text HLabel 8100 1950 2    50   Output ~ 0
+RF_OUT
+Wire Wire Line
+	7600 1950 8100 1950
+Text Label 3250 2500 0    50   ~ 0
+GEN_LD
+Wire Wire Line
+	3150 2500 3250 2500
+Text Label 7800 2400 0    50   ~ 0
+DETN
+Wire Wire Line
+	7600 2400 7800 2400
+$Sheet
+S 2200 5200 1000 850 
+U 5D47BB1E
+F0 "TX Power" 50
+F1 "tx_power.sch" 50
+$EndSheet
+Wire Wire Line
+	1450 2100 1850 2100
+$EndSCHEMATC
