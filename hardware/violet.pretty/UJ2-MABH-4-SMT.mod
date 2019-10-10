@@ -1,0 +1,142 @@
+PCBNEW-LibModule-V1  
+# encoding utf-8
+Units mm
+$INDEX
+CUI_UJ2-MABH-4-SMT
+$EndINDEX
+$MODULE CUI_UJ2-MABH-4-SMT
+Po 0 0 0 15 00000000 00000000 ~~
+Li CUI_UJ2-MABH-4-SMT
+Cd 
+Sc 00000000
+At SMD
+Op 0 0 0
+.SolderMask 0
+.SolderPaste 0
+T0 0.3903 -2.78708 1.00075 1.00075 0 0.05 N V 21 "CUI_UJ2-MABH-4-SMT"
+T1 1.02628 9.72711 1.00124 1.00124 0 0.05 N V 21 "VAL**"
+DS -2.26 -0.75 5.46 -0.75 0.127 27
+DS 5.46 -0.75 5.46 7.85 0.127 27
+DS 5.46 7.85 5.46 8.45 0.127 27
+DS 5.46 8.45 -2.26 8.45 0.127 27
+DS -2.26 8.45 -2.26 -0.75 0.127 27
+DS -2.26 3.98 -2.26 1.5 0.127 21
+DS 5.46 3.98 5.46 1.5 0.127 21
+DS -1.61 -0.75 -0.5 -0.75 0.127 21
+DS 3.7 -0.75 4.81 -0.75 0.127 21
+DS -2.26 6.98 -2.26 8.45 0.127 21
+DS -2.26 8.45 5.46 8.45 0.127 21
+DS 5.46 8.45 5.46 6.98 0.127 21
+DS 5.46 7.85 11.6 7.85 0.127 27
+T2 5.850300 8.850460 1 1 0 .05 N V 51 "PCB~EDGE"
+DC -0.9 -1.4 -0.82 -1.4 0.16 21
+DC 0 -0.15 0.08 -0.15 0.16 27
+DS -2.51 1.6 -2.51 3.85 0.05 26
+DS -2.51 3.85 -4.11 3.85 0.05 26
+DS -4.11 3.85 -4.11 6.98 0.05 26
+DS -4.11 6.98 -2.51 6.98 0.05 26
+DS -2.51 6.98 -2.51 8.7 0.05 26
+DS -2.51 8.7 5.71 8.7 0.05 26
+DS 5.71 8.7 5.71 7.1 0.05 26
+DS 5.71 7.1 7.31 7.1 0.05 26
+DS 7.31 7.1 7.31 3.85 0.05 26
+DS 7.31 3.85 5.71 3.85 0.05 26
+DS 5.71 3.85 5.71 1.6 0.05 26
+DS 5.71 1.6 7.31 1.6 0.05 26
+DS 7.31 1.6 7.31 -1.5 0.05 26
+DS 7.31 -1.5 4.81 -1.5 0.05 26
+DS 4.81 -1.5 4.81 -1 0.05 26
+DS 4.81 -1 3.7 -1 0.05 26
+DS 3.7 -1 3.7 -1.5 0.05 26
+DS 3.7 -1.5 -0.5 -1.5 0.05 26
+DS -0.5 -1.5 -0.5 -1 0.05 26
+DS -0.5 -1 -1.61 -1 0.05 26
+DS -1.61 -1 -1.61 -1.5 0.05 26
+DS -1.61 -1.5 -4.11 -1.5 0.05 26
+DS -4.11 -1.5 -4.11 1.6 0.05 26
+DS -4.11 1.6 -2.51 1.6 0.05 26
+$PAD
+Sh "1" R 2.5 0.5 0 0 900
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 0 0
+$EndPAD
+$PAD
+Sh "2" R 2.5 0.5 0 0 900
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 0.8 0
+$EndPAD
+$PAD
+Sh "3" R 2.5 0.5 0 0 900
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 1.6 0
+$EndPAD
+$PAD
+Sh "4" R 2.5 0.5 0 0 900
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 2.4 0
+$EndPAD
+$PAD
+Sh "5" R 2.5 0.5 0 0 900
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 3.2 0
+$EndPAD
+$PAD
+Sh "SH1" R 2 2.5 0 0 0
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po -2.86 0
+$EndPAD
+$PAD
+Sh "SH2" R 2 2.5 0 0 0
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 6.06 0
+$EndPAD
+$PAD
+Sh "Hole" C 0.9 0.9 0 0 0
+Dr 0.9 0 0
+At HOLE N 00E0FFFF
+Po -0.6 2.51
+$EndPAD
+$PAD
+Sh "Hole" C 0.9 0.9 0 0 0
+Dr 0.9 0 0
+At HOLE N 00E0FFFF
+Po 3.8 2.51
+$EndPAD
+$PAD
+Sh "SH3" R 2 2.5 0 0 0
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po -2.86 5.48
+$EndPAD
+$PAD
+Sh "SH4" R 2 2.5 0 0 0
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 6.06 5.48
+$EndPAD
+$EndMODULE CUI_UJ2-MABH-4-SMT

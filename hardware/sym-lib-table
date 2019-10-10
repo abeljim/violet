@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name violet)(type Legacy)(uri ${KIPRJMOD}/lib/violet.lib)(options "")(descr ""))
+  (lib (name violet-rescue)(type Legacy)(uri ${KIPRJMOD}/violet-rescue.lib)(options "")(descr ""))
+)
