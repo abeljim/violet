@@ -112,7 +112,39 @@ static void unmap_peripheral(struct bcm2835_peripheral *p)
 	iounmap(p->addr);
 }
 
+//Functions
 
+static void readScope()
+{
+	int counter = 0;
+	int Fail = 0;
+
+	// disable IRQ
+	local_irq_disable();
+	local_fiq_disable();
+
+	// Time
+	struct timespec ts_start, ts_stop;
+	getnstimeofday(&ts_start);
+
+	// Take Samples
+	while(counter < SAMPLE_SIZE)
+	{
+		dataStruct.Buffer[counter++] = *(gpio.addr + 13);
+	}
+
+	getnstimeofday(&ts_stop);
+
+	// enable IRQ
+	local_fiq_enable();
+	local_irq_enable();
+
+	//save the time difference ns resoulution 
+	dataStruct.time = timespec_to_ns(&ts_stop) - timespec_to_ns(&ts_start);
+	buf_p = &dataStruct;
+	ScopeBufferStart = &dataStruct;
+	ScopeBufferStop = ScopeBufferStart + sizeof(struct DataStruct);
+}
 
 
 
