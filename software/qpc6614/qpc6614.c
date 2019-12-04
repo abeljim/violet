@@ -63,6 +63,15 @@ int32_t write_qpc6614(uint32_t data)
 
 void set_db(int mode)
 {
+    // Mode 0 - 0dB
+    // Mode 1 - 0.5dB
+    // Mode 2 - 1dB
+    // Mode 3 - 2dB
+    // Mode 4 - 4dB
+    // Mode 5 - 8dB
+    // Mode 6 - 16dB
+    // Mode 7 - 31.5dB
+    
 	if(mode >= 0 && mode <=7)
 	{
 		if(mode == 0)
