@@ -10,26 +10,37 @@
 #include <wiringPi.h>
 
 #include "qpc6614.h"
+#include "tca9555.h"
 
-void turn_on_wiring_pi(void)
+QPC6614::QPC6614(void)
 {
-	if(wiringPiSetup() == -1);
+    LE_GPIO = 30; // doesnt matter
+    CE_GPIO = 23; // doesnt matter
+
+    // wiring pi 
+    CLK_GPIO = 14;
+    DATA_GPIO = 25;
+    turn_on_wpi();
 }
 
-int32_t write_qpc6614(uint32_t data)
+void QPC6614::turn_on_wpi(void)
 {
-	uint8_t LE_GPIO = 30;
-	uint8_t CLK_GPIO = 21;
-	uint8_t DATA_GPIO = 22;
-	uint8_t CE_GPIO = 23;
+    if(wiringPiSetup() == -1);
+}
 
-	pinMode(LE_GPIO, OUTPUT);
+int32_t QPC6614::write_qpc6614(uint32_t data)
+{
+    // Set LE to Output 
+    TCA9555 tca(0x20);
+    tca.setPortDirection(1,1,0);
+    tca.setOutputStates(1,1,1);
+
 	pinMode(CLK_GPIO, OUTPUT);
 	pinMode(DATA_GPIO, OUTPUT);
-	pinMode(CE_GPIO, OUTPUT);
 
 	usleep(10);
-	digitalWrite(LE_GPIO, LOW);
+    // Set LE LOW
+	tca.setOutputStates(1,1,0);
 	usleep(10);
 
 	uint16_t i;
@@ -54,14 +65,15 @@ int32_t write_qpc6614(uint32_t data)
 		data <<= 1;	
 	}
 	
-	digitalWrite(LE_GPIO, HIGH);
+    // Set LE to HIGH
+	tca.setOutputStates(1,1,1);
 	usleep(10);
 
 	return 0;
 
 }
 
-void set_db(int mode)
+void QPC6614::set_db(int mode)
 {
     // Mode 0 - 0dB
     // Mode 1 - 0.5dB
@@ -106,14 +118,11 @@ void set_db(int mode)
 		{
 			write_qpc6614(0b000000);
 		}
-
 	} 
 }
 
 int main(void)
 {
-	turn_on_wiring_pi();
-	set_db(0);
 	return 0;
 }
 

@@ -1,0 +1,7 @@
+[
+  {
+    "directory": "/home/pi/violet/software/tca9555/builddir",
+    "command": "c++ -Idemo@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'demo@exe/tca9555.cpp.o' -MF 'demo@exe/tca9555.cpp.o.d' -o 'demo@exe/tca9555.cpp.o' -c ../tca9555.cpp",
+    "file": "../tca9555.cpp"
+  }
+]

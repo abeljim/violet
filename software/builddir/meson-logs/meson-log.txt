@@ -1,0 +1,39 @@
+Build started at 2019-12-09T19:44:05.780291
+Main binary: /usr/bin/python3
+Python system: Linux
+The Meson build system
+Version: 0.49.2
+Source dir: /home/pi/violet/software
+Build dir: /home/pi/violet/software/builddir
+Build type: native build
+Project name: violet
+Project version: 0.1.0
+Native C++ compiler: c++ (gcc 8.3.0 "c++ (Raspbian 8.3.0-6+rpi1) 8.3.0")
+Build machine cpu family: arm
+Build machine cpu: armv6l
+Running compile:
+Working directory:  /tmp/tmptlebu589
+Command line:  c++ /tmp/tmptlebu589/testfile.cpp -pipe -D_FILE_OFFSET_BITS=64 -o /tmp/tmptlebu589/output.exe -O0 -fpermissive -Wl,--start-group -lwiringPi -Wl,--end-group -Wl,--allow-shlib-undefined 
+
+Code:
+ int main(int argc, char **argv) { return 0; }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Library wiringPi found: YES
+Build targets in project: 2
+Found ninja-1.8.2 at /usr/bin/ninja
+Running compile:
+Working directory:  /tmp/tmprh1gnq99
+Command line:  c++ /tmp/tmprh1gnq99/testfile.cpp -pipe -D_FILE_OFFSET_BITS=64 -c -o /tmp/tmprh1gnq99/output.obj -O0 -fpermissive --print-search-dirs 
+
+Code:
+ 
+Compiler stdout:
+ install: /usr/lib/gcc/arm-linux-gnueabihf/8/
+programs: =/usr/lib/gcc/arm-linux-gnueabihf/8/:/usr/lib/gcc/arm-linux-gnueabihf/8/:/usr/lib/gcc/arm-linux-gnueabihf/:/usr/lib/gcc/arm-linux-gnueabihf/8/:/usr/lib/gcc/arm-linux-gnueabihf/:/usr/lib/gcc/arm-linux-gnueabihf/8/../../../../arm-linux-gnueabihf/bin/arm-linux-gnueabihf/8/:/usr/lib/gcc/arm-linux-gnueabihf/8/../../../../arm-linux-gnueabihf/bin/arm-linux-gnueabihf/:/usr/lib/gcc/arm-linux-gnueabihf/8/../../../../arm-linux-gnueabihf/bin/
+libraries: =/usr/lib/gcc/arm-linux-gnueabihf/8/:/usr/lib/gcc/arm-linux-gnueabihf/8/../../../../arm-linux-gnueabihf/lib/arm-linux-gnueabihf/8/:/usr/lib/gcc/arm-linux-gnueabihf/8/../../../../arm-linux-gnueabihf/lib/arm-linux-gnueabihf/:/usr/lib/gcc/arm-linux-gnueabihf/8/../../../../arm-linux-gnueabihf/lib/:/usr/lib/gcc/arm-linux-gnueabihf/8/../../../arm-linux-gnueabihf/8/:/usr/lib/gcc/arm-linux-gnueabihf/8/../../../arm-linux-gnueabihf/:/usr/lib/gcc/arm-linux-gnueabihf/8/../../../:/lib/arm-linux-gnueabihf/8/:/lib/arm-linux-gnueabihf/:/lib/:/usr/lib/arm-linux-gnueabihf/8/:/usr/lib/arm-linux-gnueabihf/:/usr/lib/
+
+Compiler stderr:
+ 
