@@ -9,8 +9,8 @@
 #include <linux/types.h>
 #include <wiringPi.h>
 
-#include "qpc6614.h"
-#include "tca9555.h"
+#include "tca9555/tca9555.h"
+#include "qpc6614/qpc6614.h"
 
 QPC6614::QPC6614(void)
 {

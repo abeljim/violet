@@ -1,1 +1,2 @@
-install_headers('tca9555.h','qpc6614.h')
+subdir('tca9555')
+subdir('qpc6614')

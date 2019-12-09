@@ -1,12 +1,17 @@
 [
   {
     "directory": "/home/pi/violet/software/builddir",
-    "command": "c++ -Isrc/25a6634@@violet@sha -Isrc -I../src -Iinclude -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -fPIC  -MD -MQ 'src/25a6634@@violet@sha/tca9555.cpp.o' -MF 'src/25a6634@@violet@sha/tca9555.cpp.o.d' -o 'src/25a6634@@violet@sha/tca9555.cpp.o' -c ../src/tca9555.cpp",
-    "file": "../src/tca9555.cpp"
+    "command": "c++ -Isrc/tca9555/2ea5940@@tca9555@sta -Isrc/tca9555 -I../src/tca9555 -Iinclude -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -fPIC  -MD -MQ 'src/tca9555/2ea5940@@tca9555@sta/tca9555.cpp.o' -MF 'src/tca9555/2ea5940@@tca9555@sta/tca9555.cpp.o.d' -o 'src/tca9555/2ea5940@@tca9555@sta/tca9555.cpp.o' -c ../src/tca9555/tca9555.cpp",
+    "file": "../src/tca9555/tca9555.cpp"
   },
   {
     "directory": "/home/pi/violet/software/builddir",
-    "command": "c++ -Idemo@exe -I. -I.. -Iinclude -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'demo@exe/src_tca9555.cpp.o' -MF 'demo@exe/src_tca9555.cpp.o.d' -o 'demo@exe/src_tca9555.cpp.o' -c ../src/tca9555.cpp",
-    "file": "../src/tca9555.cpp"
+    "command": "c++ -Isrc/qpc6614/2135102@@qpc6614@sta -Isrc/qpc6614 -I../src/qpc6614 -Iinclude -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -fPIC  -MD -MQ 'src/qpc6614/2135102@@qpc6614@sta/qpc6614.cpp.o' -MF 'src/qpc6614/2135102@@qpc6614@sta/qpc6614.cpp.o.d' -o 'src/qpc6614/2135102@@qpc6614@sta/qpc6614.cpp.o' -c ../src/qpc6614/qpc6614.cpp",
+    "file": "../src/qpc6614/qpc6614.cpp"
+  },
+  {
+    "directory": "/home/pi/violet/software/builddir",
+    "command": "c++ -Iviolet_bin@exe -I. -I.. -Iinclude -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'violet_bin@exe/src_main.cpp.o' -MF 'violet_bin@exe/src_main.cpp.o.d' -o 'violet_bin@exe/src_main.cpp.o' -c ../src/main.cpp",
+    "file": "../src/main.cpp"
   }
 ]

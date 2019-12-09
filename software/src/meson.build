@@ -1,7 +1,4 @@
-violet_sources = ['tca9555.cpp']
-main_source = files('tca9555.cpp')
-violetlib = shared_library('violet',
-                            violet_sources,
-                            include_directories : inc,
-                            dependencies : wpi_dep,
-                            install : true)
+main_source = files('main.cpp')
+project_sources += main_source
+subdir('tca9555')
+subdir('qpc6614')

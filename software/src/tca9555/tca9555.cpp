@@ -1,7 +1,7 @@
 #include <iostream>
 #include <errno.h>
 #include <wiringPiI2C.h>
-#include "tca9555.h"
+#include "tca9555/tca9555.h"
 
 using namespace std;
 
@@ -113,9 +113,4 @@ int TCA9555::getStates(int reg)
 {
     // Add input check later
     return wiringPiI2CReadReg8(fd, reg); 
-}
-
-int main(void)
-{
-    return 0;
 }

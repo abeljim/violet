@@ -60,21 +60,26 @@ build PHONY: phony
 
 # Build rules for targets
 
-build src/25a6634@@violet@sha/tca9555.cpp.o: cpp_COMPILER ../src/tca9555.cpp
- DEPFILE = src/25a6634@@violet@sha/tca9555.cpp.o.d
- ARGS = -Isrc/25a6634@@violet@sha -Isrc -I../src -Iinclude -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -fPIC
+build src/tca9555/2ea5940@@tca9555@sta/tca9555.cpp.o: cpp_COMPILER ../src/tca9555/tca9555.cpp
+ DEPFILE = src/tca9555/2ea5940@@tca9555@sta/tca9555.cpp.o.d
+ ARGS = -Isrc/tca9555/2ea5940@@tca9555@sta -Isrc/tca9555 -I../src/tca9555 -Iinclude -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -fPIC
 
-build src/25a6634@@violet@sha/libviolet.so.symbols: SHSYM src/libviolet.so
+build src/tca9555/libtca9555.a: STATIC_LINKER src/tca9555/2ea5940@@tca9555@sta/tca9555.cpp.o
+ LINK_ARGS = csrD
 
-build src/libviolet.so: cpp_LINKER src/25a6634@@violet@sha/tca9555.cpp.o | /usr/lib/libwiringPi.so.2.50
- LINK_ARGS = -Wl,--no-undefined -Wl,--as-needed -shared -fPIC -Wl,--start-group -Wl,-soname,libviolet.so -lwiringPi -Wl,--end-group
+build src/qpc6614/2135102@@qpc6614@sta/qpc6614.cpp.o: cpp_COMPILER ../src/qpc6614/qpc6614.cpp
+ DEPFILE = src/qpc6614/2135102@@qpc6614@sta/qpc6614.cpp.o.d
+ ARGS = -Isrc/qpc6614/2135102@@qpc6614@sta -Isrc/qpc6614 -I../src/qpc6614 -Iinclude -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -fPIC
 
-build demo@exe/src_tca9555.cpp.o: cpp_COMPILER ../src/tca9555.cpp
- DEPFILE = demo@exe/src_tca9555.cpp.o.d
- ARGS = -Idemo@exe -I. -I.. -Iinclude -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g
+build src/qpc6614/libqpc6614.a: STATIC_LINKER src/qpc6614/2135102@@qpc6614@sta/qpc6614.cpp.o
+ LINK_ARGS = csrD
 
-build demo: cpp_LINKER demo@exe/src_tca9555.cpp.o | /usr/lib/libwiringPi.so.2.50
- LINK_ARGS = -Wl,--no-undefined -Wl,--as-needed -Wl,--start-group -lwiringPi -Wl,--end-group
+build violet_bin@exe/src_main.cpp.o: cpp_COMPILER ../src/main.cpp
+ DEPFILE = violet_bin@exe/src_main.cpp.o.d
+ ARGS = -Iviolet_bin@exe -I. -I.. -Iinclude -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g
+
+build violet_bin: cpp_LINKER violet_bin@exe/src_main.cpp.o | /usr/lib/libwiringPi.so.2.50 src/tca9555/libtca9555.a src/qpc6614/libqpc6614.a
+ LINK_ARGS = -Wl,--no-undefined -Wl,--as-needed -Wl,--start-group src/tca9555/libtca9555.a src/qpc6614/libqpc6614.a -lwiringPi -Wl,--end-group '-Wl,-rpath,$$ORIGIN/src/tca9555:$$ORIGIN/src/qpc6614' -Wl,-rpath-link,/home/pi/violet/software/builddir/src/tca9555:/home/pi/violet/software/builddir/src/qpc6614
 
 # Test rules
 
@@ -122,7 +127,7 @@ build meson-uninstall: CUSTOM_COMMAND PHONY
 
 build uninstall: phony meson-uninstall
 
-build all: phony src/libviolet.so demo
+build all: phony src/tca9555/libtca9555.a src/qpc6614/libqpc6614.a violet_bin
 
 default all
 
@@ -132,11 +137,11 @@ build meson-clean: CUSTOM_COMMAND PHONY
  COMMAND = ninja -t clean
  description = Cleaning.
 
-build build.ninja: REGENERATE_BUILD ../meson.build ../include/meson.build ../src/meson.build meson-private/coredata.dat
+build build.ninja: REGENERATE_BUILD ../meson.build ../include/meson.build ../include/tca9555/meson.build ../include/qpc6614/meson.build ../src/meson.build ../src/tca9555/meson.build ../src/qpc6614/meson.build meson-private/coredata.dat
  pool = console
 
 build reconfigure: REGENERATE_BUILD PHONY
  pool = console
 
-build ../meson.build ../include/meson.build ../src/meson.build meson-private/coredata.dat: phony 
+build ../meson.build ../include/meson.build ../include/tca9555/meson.build ../include/qpc6614/meson.build ../src/meson.build ../src/tca9555/meson.build ../src/qpc6614/meson.build meson-private/coredata.dat: phony 
 

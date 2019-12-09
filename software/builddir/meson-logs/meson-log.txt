@@ -1,4 +1,4 @@
-Build started at 2019-12-09T19:44:05.780291
+Build started at 2019-12-09T22:19:50.614702
 Main binary: /usr/bin/python3
 Python system: Linux
 The Meson build system
@@ -8,12 +8,22 @@ Build dir: /home/pi/violet/software/builddir
 Build type: native build
 Project name: violet
 Project version: 0.1.0
+Sanity testing C++ compiler: c++
+Is cross compiler: False.
+Sanity check compiler command line: c++ /home/pi/violet/software/builddir/meson-private/sanitycheckcpp.cc -o /home/pi/violet/software/builddir/meson-private/sanitycheckcpp.exe
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/pi/violet/software/builddir/meson-private/sanitycheckcpp.exe
 Native C++ compiler: c++ (gcc 8.3.0 "c++ (Raspbian 8.3.0-6+rpi1) 8.3.0")
 Build machine cpu family: arm
 Build machine cpu: armv6l
 Running compile:
-Working directory:  /tmp/tmptlebu589
-Command line:  c++ /tmp/tmptlebu589/testfile.cpp -pipe -D_FILE_OFFSET_BITS=64 -o /tmp/tmptlebu589/output.exe -O0 -fpermissive -Wl,--start-group -lwiringPi -Wl,--end-group -Wl,--allow-shlib-undefined 
+Working directory:  /tmp/tmpbb0d8c36
+Command line:  c++ /tmp/tmpbb0d8c36/testfile.cpp -pipe -D_FILE_OFFSET_BITS=64 -o /tmp/tmpbb0d8c36/output.exe -O0 -fpermissive -Wl,--start-group -lwiringPi -Wl,--end-group -Wl,--allow-shlib-undefined 
 
 Code:
  int main(int argc, char **argv) { return 0; }
@@ -22,11 +32,11 @@ Compiler stdout:
 Compiler stderr:
  
 Library wiringPi found: YES
-Build targets in project: 2
+Build targets in project: 3
 Found ninja-1.8.2 at /usr/bin/ninja
 Running compile:
-Working directory:  /tmp/tmprh1gnq99
-Command line:  c++ /tmp/tmprh1gnq99/testfile.cpp -pipe -D_FILE_OFFSET_BITS=64 -c -o /tmp/tmprh1gnq99/output.obj -O0 -fpermissive --print-search-dirs 
+Working directory:  /tmp/tmp2r5m5uhe
+Command line:  c++ /tmp/tmp2r5m5uhe/testfile.cpp -pipe -D_FILE_OFFSET_BITS=64 -c -o /tmp/tmp2r5m5uhe/output.obj -O0 -fpermissive --print-search-dirs 
 
 Code:
  
