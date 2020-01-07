@@ -12,7 +12,7 @@ This repository is made up of two sections software and hardware. View folders f
 
 ## Licsense
 
-This project is licensed under the GPLv2 License -- see the [LICENSE.md]{LICENSE.md} file for details 
+This project is licensed under the GPLv2 License -- see the [LICENSE.md](LICENSE.md) file for details 
 
 ## Acknowledgments
 
