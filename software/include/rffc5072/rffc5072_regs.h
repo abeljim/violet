@@ -23,6 +23,10 @@
 #ifndef __RFFC5071_REGS_DEF
 #define __RFFC5071_REGS_DEF
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define RFFC5071_REG_SET_CLEAN(_d, _r) (_d->regs_dirty &= ~(1UL<<_r))
 #define RFFC5071_REG_SET_DIRTY(_d, _r) (_d->regs_dirty |= (1UL<<_r))
 
@@ -256,5 +260,9 @@ __MREG__(RFFC5071_LFSR,30,9,1)
 __MREG__(rffc5071_pin_tSEL,30,10,2)
 __MREG__(rffc5071_pin_tMUX,30,12,3)
 __MREG__(rffc5071_pin_tEN,30,15,1)
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // __RFFC5071_REGS_DEF

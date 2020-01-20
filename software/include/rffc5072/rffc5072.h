@@ -23,6 +23,10 @@
 #ifndef __RFFC5071_H
 #define __RFFC5071_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 
 #include "rffc5072/rffc5072_spi.h"
@@ -66,5 +70,9 @@ extern void rffc5071_enable(rffc5071_driver_t* const drv);
 extern void rffc5071_disable(rffc5071_driver_t* const drv);
 
 extern void rffc5071_set_gpo(rffc5071_driver_t* const drv, uint8_t);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // __RFFC5071_H
