@@ -126,3 +126,11 @@ dmypy.json
 
 # meson build
 /builddir
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+© 2020 GitHub, Inc.
