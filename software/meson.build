@@ -1,4 +1,4 @@
-project('violet', 'cpp',
+project('violet', 'c', 'cpp',
     version : '0.1.0',
     license : 'GPLv2')
 
@@ -19,6 +19,7 @@ violet_bin_deps = [
 violet_bin_dep_libs = [
     tca9555_lib,
     qpc6614_lib,
+    rffc5072_lib
 ]
 
 violet_bin = executable('violet_bin', 
