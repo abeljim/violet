@@ -50,11 +50,11 @@ static void gpio_clear(const int pin) {
 }
 
 static void rffc5071_spi_target_select(rffc5071_pin_t* const rffc5071_pin) {
-	gpio_clear(rffc5071_pin->gpio_select);
+	gpio_clear(rffc5071_pin->gpio_enx);
 }
 
 static void rffc5071_spi_target_unselect(rffc5071_pin_t* const rffc5071_pin) {
-	gpio_set(rffc5071_pin->gpio_select);
+	gpio_set(rffc5071_pin->gpio_enx);
 }
 
 static void rffc5071_spi_direction_out(rffc5071_pin_t* const rffc5071_pin) {
@@ -90,7 +90,7 @@ static void rffc5071_spi_target_init(rffc5071_pin_t* const rffc5071_pin) {
 	// scu_pinmux(SCU_MIXER_RESETX, SCU_GPIO_FAST);
 
 	/* Set GPIO pins as outputs. */
-	gpio_output(rffc5071_pin->gpio_select);
+	gpio_output(rffc5071_pin->gpio_enx);
 
 	/* set to known state */
 	rffc5071_spi_target_unselect(rffc5071_pin);
