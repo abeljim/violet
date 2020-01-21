@@ -49,84 +49,84 @@ static void gpio_clear(const int pin) {
     digitalWrite(pin, 0);
 }
 
-static void rffc5071_spi_target_select(rffc5071_pin_t* const rffc5071_pin) {
-	gpio_clear(rffc5071_pin->gpio_enx);
+static void rffc5072_spi_target_select(rffc5072_pin_t* const rffc5072_pin) {
+	gpio_clear(rffc5072_pin->gpio_enx);
 }
 
-static void rffc5071_spi_target_unselect(rffc5071_pin_t* const rffc5071_pin) {
-	gpio_set(rffc5071_pin->gpio_enx);
+static void rffc5072_spi_target_unselect(rffc5072_pin_t* const rffc5072_pin) {
+	gpio_set(rffc5072_pin->gpio_enx);
 }
 
-static void rffc5071_spi_direction_out(rffc5071_pin_t* const rffc5071_pin) {
-	gpio_output(rffc5071_pin->gpio_data);
+static void rffc5072_spi_direction_out(rffc5072_pin_t* const rffc5072_pin) {
+	gpio_output(rffc5072_pin->gpio_data);
 }
 
-static void rffc5071_spi_direction_in(rffc5071_pin_t* const rffc5071_pin) {
-	gpio_input(rffc5071_pin->gpio_data);
+static void rffc5072_spi_direction_in(rffc5072_pin_t* const rffc5072_pin) {
+	gpio_input(rffc5072_pin->gpio_data);
 }
 
-static void rffc5071_spi_data_out(rffc5071_pin_t* const rffc5071_pin, const bool bit) {
-	gpio_write(rffc5071_pin->gpio_data, bit);
+static void rffc5072_spi_data_out(rffc5072_pin_t* const rffc5072_pin, const bool bit) {
+	gpio_write(rffc5072_pin->gpio_data, bit);
 }
 
-static bool rffc5071_spi_data_in(rffc5071_pin_t* const rffc5071_pin) {
-	return gpio_read(rffc5071_pin->gpio_data);
+static bool rffc5072_spi_data_in(rffc5072_pin_t* const rffc5072_pin) {
+	return gpio_read(rffc5072_pin->gpio_data);
 }
 
-static void rffc5071_spi_bus_init(rffc5071_pin_t* const rffc5071_pin) {
+static void rffc5072_spi_bus_init(rffc5072_pin_t* const rffc5072_pin) {
 	// scu_pinmux(SCU_MIXER_SCLK, SCU_GPIO_FAST | SCU_CONF_FUNCTION4);
 	// scu_pinmux(SCU_MIXER_SDATA, SCU_GPIO_FAST);
 
-	gpio_output(rffc5071_pin->gpio_clock);
-	rffc5071_spi_direction_out(rffc5071_pin);
+	gpio_output(rffc5072_pin->gpio_clock);
+	rffc5072_spi_direction_out(rffc5072_pin);
 
-	gpio_clear(rffc5071_pin->gpio_clock);
-	gpio_clear(rffc5071_pin->gpio_data);
+	gpio_clear(rffc5072_pin->gpio_clock);
+	gpio_clear(rffc5072_pin->gpio_data);
 }
 
-static void rffc5071_spi_target_init(rffc5071_pin_t* const rffc5071_pin) {
+static void rffc5072_spi_target_init(rffc5072_pin_t* const rffc5072_pin) {
 	/* Configure GPIO pins. */
 	// scu_pinmux(SCU_MIXER_ENX, SCU_GPIO_FAST);
 	// scu_pinmux(SCU_MIXER_RESETX, SCU_GPIO_FAST);
 
 	/* Set GPIO pins as outputs. */
-	gpio_output(rffc5071_pin->gpio_enx);
+	gpio_output(rffc5072_pin->gpio_enx);
 
 	/* set to known state */
-	rffc5071_spi_target_unselect(rffc5071_pin);
+	rffc5072_spi_target_unselect(rffc5072_pin);
 }
 
-void rffc5071_spi_init(rffc5071_pin_t* const rffc5071_pin) {
-	rffc5071_spi_bus_init(rffc5071_pin);
-	rffc5071_spi_target_init(rffc5071_pin);
+void rffc5072_spi_init(rffc5072_pin_t* const rffc5072_pin) {
+	rffc5072_spi_bus_init(rffc5072_pin);
+	rffc5072_spi_target_init(rffc5072_pin);
 }
 
-static void rffc5071_spi_serial_delay(rffc5071_pin_t* const rffc5071_pin) {
-	(void)rffc5071_pin;
+static void rffc5072_spi_serial_delay(rffc5072_pin_t* const rffc5072_pin) {
+	(void)rffc5072_pin;
 	__asm__("nop");
 }
 
-static void rffc5071_spi_sck(rffc5071_pin_t* const rffc5071_pin) {
-	rffc5071_spi_serial_delay(rffc5071_pin);
-	gpio_set(rffc5071_pin->gpio_clock);
+static void rffc5072_spi_sck(rffc5072_pin_t* const rffc5072_pin) {
+	rffc5072_spi_serial_delay(rffc5072_pin);
+	gpio_set(rffc5072_pin->gpio_clock);
 
-	rffc5071_spi_serial_delay(rffc5071_pin);
-	gpio_clear(rffc5071_pin->gpio_clock);
+	rffc5072_spi_serial_delay(rffc5072_pin);
+	gpio_clear(rffc5072_pin->gpio_clock);
 }
 
-static uint32_t rffc5071_spi_exchange_bit(rffc5071_pin_t* const rffc5071_pin, const uint32_t bit) {
-	rffc5071_spi_data_out(rffc5071_pin, bit);
-	rffc5071_spi_sck(rffc5071_pin);
-	return rffc5071_spi_data_in(rffc5071_pin) ? 1 : 0;
+static uint32_t rffc5072_spi_exchange_bit(rffc5072_pin_t* const rffc5072_pin, const uint32_t bit) {
+	rffc5072_spi_data_out(rffc5072_pin, bit);
+	rffc5072_spi_sck(rffc5072_pin);
+	return rffc5072_spi_data_in(rffc5072_pin) ? 1 : 0;
 }
 
-static uint32_t rffc5071_spi_exchange_word(rffc5071_pin_t* const rffc5071_pin, const uint32_t data, const size_t count) {
+static uint32_t rffc5072_spi_exchange_word(rffc5072_pin_t* const rffc5072_pin, const uint32_t data, const size_t count) {
 	size_t bits = count;
 	const uint32_t msb = 1UL << (count - 1);
 	uint32_t t = data;
 
 	while (bits--) {
-		t = (t << 1) | rffc5071_spi_exchange_bit(rffc5071_pin, t & msb);
+		t = (t << 1) | rffc5072_spi_exchange_bit(rffc5072_pin, t & msb);
 	}
 
 	return t & ((1UL << count) - 1);
@@ -148,32 +148,32 @@ static uint32_t rffc5071_spi_exchange_word(rffc5071_pin_t* const rffc5071_pin, c
  *   next 7 bits are register address,
  *   next 16 bits are register value.
  */
-void rffc5071_spi_transfer(rffc5071_pin_t* const rffc5071_pin, uint16_t data[2]) {
+void rffc5072_spi_transfer(rffc5072_pin_t* const rffc5072_pin, uint16_t data[2]) {
 	const bool direction_read = (data[0] >> 7) & 1;
 
 	/*
 	 * The device requires two clocks while ENX is high before a serial
 	 * transaction.  This is not clearly documented.
 	 */
-	rffc5071_spi_sck(rffc5071_pin);
-	rffc5071_spi_sck(rffc5071_pin);
+	rffc5072_spi_sck(rffc5072_pin);
+	rffc5072_spi_sck(rffc5072_pin);
 
-	rffc5071_spi_target_select(rffc5071_pin);
-	data[0] = rffc5071_spi_exchange_word(rffc5071_pin, data[0], 9);
+	rffc5072_spi_target_select(rffc5072_pin);
+	data[0] = rffc5072_spi_exchange_word(rffc5072_pin, data[0], 9);
 
 	if( direction_read ) {
-		rffc5071_spi_direction_in(rffc5071_pin);
-		rffc5071_spi_sck(rffc5071_pin);
+		rffc5072_spi_direction_in(rffc5072_pin);
+		rffc5072_spi_sck(rffc5072_pin);
 	}
-	data[1] = rffc5071_spi_exchange_word(rffc5071_pin, data[1], 16);
+	data[1] = rffc5072_spi_exchange_word(rffc5072_pin, data[1], 16);
 
-	rffc5071_spi_serial_delay(rffc5071_pin);
-	rffc5071_spi_target_unselect(rffc5071_pin);
-	rffc5071_spi_direction_out(rffc5071_pin);
+	rffc5072_spi_serial_delay(rffc5072_pin);
+	rffc5072_spi_target_unselect(rffc5072_pin);
+	rffc5072_spi_direction_out(rffc5072_pin);
 
 	/*
 	 * The device requires a clock while ENX is high after a serial
 	 * transaction.  This is not clearly documented.
 	 */
-	rffc5071_spi_sck(rffc5071_pin);
+	rffc5072_spi_sck(rffc5072_pin);
 }

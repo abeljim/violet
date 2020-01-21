@@ -20,8 +20,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef __RFFC5071_SPI_H
-#define __RFFC5071_SPI_H
+#ifndef __RFFC5072_SPI_H
+#define __RFFC5072_SPI_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,13 +34,13 @@ typedef struct {
 	int gpio_enx;
 	int gpio_clock;
 	int gpio_data;
-} rffc5071_pin_t;
+} rffc5072_pin_t;
 
-void rffc5071_spi_init(rffc5071_pin_t* const rffc5071_pin);
-void rffc5071_spi_transfer(rffc5071_pin_t* const rffc5071_pin, uint16_t data[2]);
+void rffc5072_spi_init(rffc5072_pin_t* const rffc5072_pin);
+void rffc5072_spi_transfer(rffc5072_pin_t* const rffc5072_pin, uint16_t data[2]);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif // __RFFC5071_SPI_H
+#endif // __RFFC5072_SPI_H

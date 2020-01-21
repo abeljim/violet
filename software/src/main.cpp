@@ -3,7 +3,7 @@
 #include "rffc5072/rffc5072.h"
 
 int main(){
-    rffc5071_driver_t rffc5071 = {
+    rffc5072_driver_t rffc5072 = {
         .pin = {
             .gpio_enx = 28,
             .gpio_clock = 14,
@@ -11,8 +11,8 @@ int main(){
         }
     };
 
-    rffc5071_setup(&rffc5071);
-    rffc5071_set_frequency(&rffc5071, 90);
+    rffc5072_setup(&rffc5072);
+    rffc5072_set_frequency(&rffc5072, 90);
 
     TCA9555 tca(0x20);
     return 0;
